@@ -1,0 +1,20 @@
+RewriteEngine On
+RewriteRule ^$ /ly/site/index.php [L]
+RewriteRule ^site/index.html$ /ly/site/index.php [L]
+
+RewriteRule ^gioi-thieu.html$ /ly/site/?act=about [L]
+RewriteRule ^san-pham.html$ /ly/site/?act=cat [L]
+RewriteRule ^bai-viet.html$ /ly/site/?act=blog [L]
+RewriteRule ^lien-he.html$ /ly/site/?act=contact [L]
+
+RewriteRule ^([a-zA-Z0-9-]+)-([0-9]+).html$ /ly/site/?act=singleproduct&id=$2&slug=$1 [L]
+
+
+
+RewriteRule ^bai-viet/page-([0-9]+).html$ /ly/site/index.php?act=blog&pagenum=$1 [L]
+
+RewriteRule ^bai-viet/([a-zA-Z0-9-]+)-([0-9]+).html$ /ly/site/?act=blogpost&id=$2&slug=$1 [L]
+
+RewriteRule ^danh-muc/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+).html$ /ly/site/?act=cat&maloai=$2&Page=$3&slug=$1 [L]
+
+RewriteRule ^bai-viet/([a-zA-Z0-9-]+)-([0-9]+)/page-([0-9]+).html$ /ly/site/?act=blog&maloai=$2&Page=$3&slug=$1 [L]
